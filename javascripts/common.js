@@ -1,22 +1,6 @@
-//
  $(document).ready(function() {
 
-// Weather feed
-	$(function () {
-	$('#weather').weatherfeed(['USHI0290'],{
-		unit: 'c',
-		image: true,
-		country: false,
-		highlow: false,
-		wind: false,
-		humidity: false,
-		visibility: false,
-		sunrise: false,
-		sunset: false,
-		forecast: false,
-		link: false
-	});
-	});
+
 // Mosaic
 	jQuery(function($){			
 		$('.circle').mosaic({

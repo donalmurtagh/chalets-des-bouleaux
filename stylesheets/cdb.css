@@ -1,0 +1,8 @@
+#email {
+    color: #9FADB6;
+    text-transform: none;
+}
+
+#email:hover, #email:focus {
+    color: #D6BA00;
+}
