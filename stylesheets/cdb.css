@@ -6,3 +6,21 @@
 #email:hover, #email:focus {
     color: #D6BA00;
 }
+
+#logo {
+    font-size: 40px;
+    line-height: 40px;
+    color: white;
+}
+
+@media only screen and (max-width: 479px) {
+    #logo {
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+    #logo img {
+        width: 20px;
+        height: auto;
+    }
+}
