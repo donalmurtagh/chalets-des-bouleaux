@@ -8,6 +8,7 @@
 }
 
 #logo {
+    font-variant: small-caps;
     font-size: 40px;
     line-height: 40px;
     color: white;
@@ -17,6 +18,17 @@
     text-transform: none;
 }
 
+#top p {
+    text-align: justify;
+}
+
+#footer {
+    padding-bottom: 0;
+}
+
+body {
+    font: 16px/19px 'PT Sans',Arial,sans-serif
+}
 
 @media only screen and (max-width: 479px) {
     #logo {
