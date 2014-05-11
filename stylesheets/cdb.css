@@ -19,7 +19,7 @@
     text-transform: none;
 }
 
-.container p {
+#top p, section p {
     text-align: justify;
 }
 
@@ -48,7 +48,6 @@ ul.arrow-marker > li {
     background: url("../images/icons/arrow_hover.png") no-repeat scroll transparent;
     background-position: 0 50%;
     padding: 0 0 0 25px;
-    transition: background-position 0.3s ease 0s;
     transition: 0.3s ease;
 }
 
@@ -65,6 +64,30 @@ table.zebra td:first-child {
 ul.line > li:hover {
     padding-left: 0;
 }
+
+.spacer {
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.sidebarTitle {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.superscript {
+    vertical-align: super;
+    font-size: 65%;
+}
+
+.fancy {
+    color: #3DA0BF;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #FFFFFF, 0 2px 0 #C1C5C8;
+    text-transform: uppercase;
+}
+
 
 @media only screen and (max-width: 479px) {
     #logo {
