@@ -88,6 +88,9 @@ ul.line > li:hover {
     text-transform: uppercase;
 }
 
+.clear-both {
+    clear: both;
+}
 
 @media only screen and (max-width: 479px) {
     #logo {
