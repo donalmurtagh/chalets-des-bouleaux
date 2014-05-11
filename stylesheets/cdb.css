@@ -12,13 +12,14 @@
     font-size: 40px;
     line-height: 40px;
     color: white;
+    font-weight: bold;
 }
 
 .captionContainer p {
     text-transform: none;
 }
 
-#top p {
+.container p {
     text-align: justify;
 }
 
@@ -28,6 +29,41 @@
 
 body {
     font: 16px/19px 'PT Sans',Arial,sans-serif
+}
+
+footer {
+    margin-top: -10px;
+}
+
+.callout {
+    padding: 5px;
+    margin: 10px 0;
+}
+
+ul.arrow-marker {
+    padding-left: 20px;
+}
+
+ul.arrow-marker > li {
+    background: url("../images/icons/arrow_hover.png") no-repeat scroll transparent;
+    background-position: 0 50%;
+    padding: 0 0 0 25px;
+    transition: background-position 0.3s ease 0s;
+    transition: 0.3s ease;
+}
+
+ul.arrow-marker > li > a {
+    color: #3DA0BF;
+    text-decoration: none;
+    display: block;
+}
+
+table.zebra td:first-child {
+    font-size: 17px;
+}
+
+ul.line > li:hover {
+    padding-left: 0;
 }
 
 @media only screen and (max-width: 479px) {
