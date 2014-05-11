@@ -19,7 +19,7 @@
     text-transform: none;
 }
 
-#top p, section p {
+#top p, .justify {
     text-align: justify;
 }
 
