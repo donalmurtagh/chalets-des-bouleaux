@@ -84,9 +84,9 @@
                 <!-- logo -->
                 <div id="logo" class="ten columns">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="Logo">
+                        <img src="images/logo.png" alt="Logo"/>
+                        Chalets des Bouleaux
                     </a>
-                    Chalets des Bouleaux
                 </div>
                 <!-- end logo -->
 
@@ -143,7 +143,7 @@
                     <div id="map" class="gmap"></div>
                 </div>
 
-                <div class="info">Merci, votre message etait envoyé</div>
+                <div id="msg-sent" class="info hide">Merci, votre message etait envoyé</div>
 
                 <p>Pour nous contacter, veuillez compléter les informations ci-dessous.</p>
 
@@ -310,7 +310,7 @@
                         url: "mail.php",
                         data: dataString,
                         success: function () {
-                            $('#form-sent').fadeIn(fadeTime);
+                            $('#msg-sent').fadeIn(fadeTime);
                         }
                     });
                     return false;

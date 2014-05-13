@@ -7,11 +7,11 @@
     color: #D6BA00;
 }
 
-#logo {
+#logo a {
     font-variant: small-caps;
     font-size: 40px;
     line-height: 40px;
-    color: white;
+    color: #D6BA00;
     font-weight: bold;
 }
 
