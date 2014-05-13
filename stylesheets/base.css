@@ -359,7 +359,7 @@
 
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {
-		p, h1, h2, h3, h4, h5, h6, ol, ul {margin-left: 10px; margin-right: 10px;}
+		p, h1, h2, h3, h4, h5, h6, ol, ul, address {margin-left: 10px; margin-right: 10px;}
 		input[type="text"], input[type="password"], input[type="email"], textarea, select {width: 390px;}
 		.button.full-width, .button-dark.full-width, .button-light.full-width, button.full-width, button.button-dark.full-width, button.button-light.full-width, input[type="submit"].full-width, input.button-dark[type="submit"].full-width, input.button-light[type="submit"].full-width, input[type="reset"].full-width, input.button-dark[type="reset"].full-width, input.button-light[type="reset"].full-width, input[type="button"].full-width, input.button-dark[type="button"].full-width, input.button-light[type="button"].full-width {width: 400px;}
 		.remove-bottom { margin-bottom: 20px !important; }
@@ -371,7 +371,7 @@
 
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 	@media only screen and (max-width: 479px) {
-		p, h1, h2, h3, h4, h5, h6, ol, ul {margin-left: 10px; margin-right: 10px;}
+		p, h1, h2, h3, h4, h5, h6, ol, ul, address {margin-left: 10px; margin-right: 10px;}
 		input[type="text"], input[type="password"], input[type="email"], textarea, select {width: 270px;}
 		.button.full-width, .button-dark.full-width, .button-light.full-width, button.full-width, button.button-dark.full-width, button.button-light.full-width, input[type="submit"].full-width, input.button-dark[type="submit"].full-width, input.button-light[type="submit"].full-width, input[type="reset"].full-width, input.button-dark[type="reset"].full-width, input.button-light[type="reset"].full-width, input[type="button"].full-width, input.button-dark[type="button"].full-width, input.button-light[type="button"].full-width {width: 280px;}
 		.remove-bottom { margin-bottom: 20px !important; }

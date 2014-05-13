@@ -23,10 +23,7 @@
 	  direction: 1,
 	  format: 'M d, Y'
 	});
-// Form Validation
-	$(function(){
-	  $("#bookingForm").validate();
-	});
+
 // Fit Text
 	$(".fittext").fitText(1.1, { minFontSize: 32, maxFontSize: '37px' });
 // Navigation Menu
@@ -77,7 +74,7 @@
 	 	show_title: false, 
 		theme: 'pp_default', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
 		overlay_gallery: false,
-		social_tools: '',
+		social_tools: ''
 		});
    });
 

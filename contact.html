@@ -33,6 +33,31 @@
         ul.line {
             margin-bottom: 20px;
         }
+
+        #directions input {
+            margin-bottom: 10px;
+        }
+
+        input[name="depart"] {
+            width: 100%;
+        }
+
+        #sidebar p {
+            text-align: justify;
+        }
+
+        @media only screen and (max-width: 767px) {
+            #directions {
+                margin-left: 10px;
+                margin-right: 20px;
+
+            }
+
+            ul.line {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
      </style>
 
     <!--[if lt IE 9]>
@@ -117,25 +142,30 @@
                 <div class="mapContainer box">
                     <div id="map" class="gmap"></div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin convallis neque non eros sodales
-                    convallis. Curabitur ac orci est, et blandit lorem. Vestibulum mattis ultrices sem a mollis. </p>
+
+                <div class="info">Merci, votre message etait envoyé</div>
+
+                <p>Pour nous contacter, veuillez compléter les informations ci-dessous.</p>
 
                 <div class="box">
-                    <!-- Contact Form -->
-                    <form id="contactForm" action="contact.html" method="post" class="remove-bottom">
-                        <label for="name">Full Name</label>
-                        <input type="text" name="name" id="name"/>
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email"/>
-                        <label for="subject">Subject</label>
-                        <input type="text" name="subject" id="subject"/>
-                        <label for="message">Message</label>
-                        <textarea rows="8" name="messge" id="message" cols="1"></textarea>
-                        <input type="submit" value="Send" id="send" class="remove-bottom"/>
+                    <form id="contactForm" class="remove-bottom">
+                        <label for="form-name">Votre Nom</label>
+                        <div id="name-error" class="hide invalid">Veuillez fournir votre nom</div>
+                        <input type="text" name="name" id="form-name"/>
+
+                        <label for="form-email">Votre Courriel</label>
+                        <div id="email-error" class="hide invalid">Veuillez fournir une adresse électronique valide</div>
+                        <input type="text" name="email" id="form-email"/>
+
+                        <label for="form-msg">Votre Message</label>
+                        <div id="msg-error" class="hide invalid">Veuillez fournir votre message</div>
+                        <textarea rows="8" name="message" id="form-msg" cols="1"></textarea>
+
+                        <input type="submit" value="Envoyer" id="send" class="remove-bottom"/>
                     </form>
-                    <!-- end Contact Form -->
                 </div>
             </section>
+
             <aside id="sidebar" class="five columns">
 
                 <h5 class="fancy">Propriétaires</h5>
@@ -170,9 +200,13 @@
                     Pour vous diriger vers Notre-Dame de Pontmain, suivez les liens suivants si vous êtes en provenance de
                     <a href="http://maps.google.ca/maps?f=d&amp;source=s_d&amp;saddr=montreal,+canada&amp;daddr=notre-dame+de+pontmain,+canada&amp;hl=fr&amp;geocode=&amp;mra=ls&amp;sll=47.15984,2.988281&amp;sspn=13.596871,39.550781&amp;ie=UTF8&amp;z=8&amp;hl=fr" target="_blank">Montréal</a> ou
                     <a href="http://maps.google.ca/maps?f=d&amp;source=s_d&amp;saddr=gatineau,+canada&amp;daddr=notre-dame+de+pontmain,+canada&amp;hl=fr&amp;geocode=&amp;mra=ls&amp;sll=46.04451,-74.63554&amp;sspn=1.734826,4.943848&amp;ie=UTF8&amp;z=9&amp;hl=fr" target="_blank">Gatineau</a>.
-                    En provenance de toutes autres directions, vous pouvez soit nous contacter ou utiliser la fonction <em>Itinéraire</em> fournie par
-                    <a href="http://maps.google.ca/?ie=UTF8&amp;hl=fr" target="_blank">Google Maps</a>.
+                    En provenance de toutes autres directions, entrez votre adresse de départ ci-dessous.
                 </p>
+                <form id="directions" action="mail.php">
+                    <div id="address-error" class="hide invalid">Veuillez fournir une adresse de départ</div>
+                    <input id="depart" name="depart" type="text" placeholder="Adresse de Départ"/>
+                    <button type="submit">Directions</button>
+                </form>
             </aside>
         </div>
     </div>
@@ -197,21 +231,21 @@
                 </div>
             </div>
         </footer>
-        <!-- end Footer -->
     </div>
 </div>
-<!-- End Document -->
 
-<!-- Java Scripts -->
 <script src="javascripts/jquery-1.8.3.min.js"></script>
-<!-- Google Map Javascripts -->
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=fr"></script>
+<script type="text/javascript" src="http://maps.google.ca/maps/api/js?sensor=false&amp;language=fr"></script>
 <script type="text/javascript" src="javascripts/gmap3.min.js"></script>
 <script type="text/javascript">
     $(function () {
+
+        var cdbAddress = "Notre-Dame-de-Pontmain, QC J0W Canada";
+        var fadeTime = 400;
+
         $('#map').gmap3({
             marker: {
-                address: "Notre-Dame-de-Pontmain, QC J0W Canada"
+                address: cdbAddress
             },
             map: {
                 options: {
@@ -219,14 +253,78 @@
                 }
             }
         });
+
+        // handler for the directions form
+        var endAddress = encodeURIComponent(cdbAddress);
+
+        $('#directions').submit(function() {
+
+            var startAddress = $('#depart').val();
+            startAddress = $.trim(startAddress);
+
+            if (startAddress) {
+                $('#address-error').fadeOut(fadeTime);
+                startAddress = encodeURIComponent(startAddress);
+                var googleMapsUrl = 'http://maps.google.ca/maps?saddr=' + startAddress + '&daddr=' + endAddress + '&hl=fr';
+                window.open(googleMapsUrl);
+            } else {
+                $('#address-error').fadeIn(fadeTime);
+            }
+            return false;
+        });
+
+        // handler for contact form
+        $(function (e) {
+            $("#contactForm").submit(function (e) {
+                var valid = true;
+
+                function validate(fieldValue, errorMsg) {
+                    if (!fieldValue) {
+                        $(errorMsg).fadeIn(fadeTime);
+                        valid = false;
+                    } else {
+                        $(errorMsg).fadeOut(fadeTime);
+                    }
+                }
+
+                var name = $.trim($("#form-name").val());
+                validate(name, '#name-error');
+
+                var text = $.trim($("#form-msg").val());
+                validate(text, '#msg-error');
+
+                var email = $.trim($("#form-email").val());
+
+                if (/(.+)@(.+){2,}\.(.+){2,}/.test(email)) {
+                    $('#email-error').fadeOut(fadeTime);
+                } else {
+                    $('#email-error').fadeIn(fadeTime);
+                    valid = false;
+                }
+
+                var dataString = 'name=' + name + '&email=' + email + '&text=' + text;
+
+                if (valid) {
+                    $.ajax({
+                        type: "POST",
+                        url: "mail.php",
+                        data: dataString,
+                        success: function () {
+                            $('#form-sent').fadeIn(fadeTime);
+                        }
+                    });
+                    return false;
+                }
+
+                e.preventDefault();
+            });
+        });
+
     });
 </script>
-<!-- End Google Map Javascripts -->
 <script src="javascripts/jquery.flexslider-min.js"></script>
 <script src="javascripts/zebra_datepicker.js"></script>
-<script src="javascripts/jquery.validate.min.js"></script>
 <script src="javascripts/jquery.prettyPhoto.js"></script>
-<script src="javascripts/jquery.gmap-1.1.0-min.js"></script>
 <script src="javascripts/mosaic.1.0.1.min.js"></script>
 <script src="javascripts/jquery.fittext.js"></script>
 <script src="javascripts/common.js"></script>
