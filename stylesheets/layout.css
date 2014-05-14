@@ -42,7 +42,7 @@
 	height: 0;
 	visibility: hidden;
 }
-#feature, #breadcrumb {
+#feature, .breadcrumb {
 	box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.05) inset, 0 -2px 1px 0 rgba(0, 0, 0, 0.05) inset;
 }
 #bottom, #bottom h6 {
@@ -745,16 +745,16 @@ ul.lang li a:hover {
 	color: #242A31;
 }
 /* Breadcrumbs */
-#breadcrumb {
+.breadcrumb {
 	height: 50px;
 	position: relative;
 	text-align: right;
 }
-#breadcrumb ul {
+.breadcrumb ul {
 	float: left;
 	margin-bottom: 0;
 }
-#breadcrumb ul li {
+.breadcrumb ul li {
 	background: url('../images/icons/breadcrumb_divider.png') no-repeat scroll right center transparent;
 	display: block;
 	float: left;
@@ -763,19 +763,19 @@ ul.lang li a:hover {
 	position: relative;
 	z-index: 3;
 }
-#breadcrumb ul li:last-child {
+.breadcrumb ul li:last-child {
 	background: none repeat scroll 0 center transparent;
 	padding-right: 0;
 	position: relative;
 	z-index: 2;
 }
-#breadcrumb a {
+.breadcrumb a {
 	color: #363f48;
 	font-weight: normal;
 	line-height: 50px;
 	padding: 0 15px 0 0;
 }
-#breadcrumb a:hover {
+.breadcrumb a:hover {
 	color: #3DA0BF;
 }
 
@@ -911,9 +911,7 @@ hr.ornament:after {
 	padding: 0 5px;
 	position: relative;
 	top: -2px;
- -bracket-:hack[;
-	top:-12px;
- ];
+
 }
 hr.hidden {
 	border: medium none;
@@ -1232,9 +1230,6 @@ table.zebra caption {
 }
 .line-padding {
 	padding-top: 20px;
- -bracket-:hack[;
-	padding-top:18px;
- ];
 }
 .centered {
 	text-align:center
