@@ -6,7 +6,7 @@
 <!--[if IE 8 ]>
 <html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <!--<![endif]-->
 <head>
 
@@ -39,6 +39,19 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <style type="text/css">
+        table.zebra td, table.zebra th {
+            text-align: center;
+        }
+
+        span.highlight {
+            display: inline;
+            color: inherit;
+            padding-left: 0;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
@@ -97,7 +110,7 @@
 <div class="wrapper">
     <!-- Header Image -->
     <div id="headerImage" class="remove-lineheight white">
-        <div class="loading"><img src="images/photos/pageheader01.jpg" alt=""></div>
+        <div class="loading"><img src="images/cdb/tarifs.jpg" alt=""></div>
     </div>
     <!-- end Header Image -->
 </div>
@@ -107,95 +120,93 @@
 <div id="main" class="white">
     <div class="container">
         <div class="sixteen columns">
-            <h2 class="uppercase fittext">Tables</h2>
+            <h2 class="uppercase fittext">TARIFS ET FORFAITS 2014</h2>
 
-            <p class="more-bottom">Aenean quis leo a dolor pulvinar faucibus. Nam dictum neque vel odio ornare iaculis.
-                Pellentesque tincidunt, risus sed suscipit interdum, augue nisl lacinia odio, quis venenatis elit dolor
-                vel dolor. Sed neque magna, blandit nec pellentesque vel, ultrices vel arcu. Ut sed tortor mauris, eu
-                volutpat nulla. Integer porttitor erat et purus porta blandit. Maecenas a euismod massa. Etiam rutrum
-                quam ac libero pretium dictum. Duis dapibus ipsum in nibh faucibus eget tincidunt mi tincidunt.
-                Curabitur eget sapien est, et scelerisque sem. </p>
+            <p class="more-bottom info">Toutes les taxes sont incluses dans nos prix</p>
         </div>
-        <hr>
         <div class="eight columns boxTitle">
-            <h4 class="add-bottom">Basic</h4>
+            <h4 class="remove-bottom">Tarif Regulier</h4>
+            <p>
+                Les tarifs ci-dessous sont pour le nombre de personnes indiqué (ou moins).
+                <span class="highlight">Pour chaque personne supplémentaire au nombre de personnes indiqué, ajoutez $20 par nuit</span>.
+            </p>
 
             <div class="more-bottom box">
-                <table>
-                    <caption>
-                        Table caption
-                    </caption>
+                <table class="zebra">
                     <thead>
                     <tr>
-                        <th>Table Heading</th>
-                        <th>Table Heading</th>
-                        <th class="center">Table Heading</th>
+                        <th>Nombre Lits Doubles</th>
+                        <th>Nombre de Personnes</th>
+                        <th>Prix par Nuit</th>
                     </tr>
                     </thead>
-                    <tfoot>
-                    <tr>
-                        <td>Table Footer</td>
-                        <td>Table Footer</td>
-                        <td class="center">Table Footer</td>
-                    </tr>
-                    </tfoot>
                     <tbody>
-                    <tr>
-                        <td>Table Data</td>
-                        <td>Table Data</td>
-                        <td class="center">Data Centered</td>
+                    <tr class="odd">
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$74</td>
                     </tr>
                     <tr>
-                        <td class="bold">Data Bold</td>
-                        <td>Table Data</td>
-                        <td class="center">Data Centered</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$108</td>
+                    </tr>
+                    <tr class="odd">
+                        <td>5</td>
+                        <td>6</td>
+                        <td>$176</td>
                     </tr>
                     <tr>
-                        <td>Table Data</td>
-                        <td>Table Data</td>
-                        <td class="center">Data Centered</td>
+                        <td>7</td>
+                        <td>6</td>
+                        <td>$176</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="eight columns boxTitle">
-            <h4 class="add-bottom">Zebra</h4>
 
+        <div class="eight columns boxTitle">
+            <h4 class="remove-bottom">Tarif Familial</h4>
+            <p>
+                Les tarifs ci-dessous sont pour le nombre de famille (ou moins). Une famille étant un couple et des enfants de moins de 18 ans.
+                <span class="highlight">Pour chaque adulte supplémentaire, ajoutez $20 par nuit</span>.
+            </p>
             <div class="more-bottom box">
                 <table class="zebra">
-                    <caption>
-                        Table caption
-                    </caption>
+
                     <thead>
                     <tr>
-                        <th>Table Heading</th>
-                        <th>Table Heading</th>
-                        <th class="center">Table Heading</th>
+                        <th>Nombre Lits Doubles</th>
+                        <th>Nombre de Famille</th>
+                        <th>Prix par Nuit</th>
+                        <th>Prix par Semaine</th>
                     </tr>
                     </thead>
-                    <tfoot>
-                    <tr>
-                        <td>Table Footer</td>
-                        <td>Table Footer</td>
-                        <td class="center">Table Footer</td>
-                    </tr>
-                    </tfoot>
                     <tbody>
                     <tr class="odd">
-                        <td>Table Data</td>
-                        <td>Table Data</td>
-                        <td class="center">Data Centered</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>$84</td>
+                        <td>$525</td>
                     </tr>
                     <tr>
-                        <td class="bold">Data Bold</td>
-                        <td>Table Data</td>
-                        <td class="center">Data Centered</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>$109</td>
+                        <td>$640</td>
                     </tr>
                     <tr class="odd">
-                        <td>Table Data</td>
-                        <td>Table Data</td>
-                        <td class="center">Data Centered</td>
+                        <td>5</td>
+                        <td>1—2</td>
+                        <td>N/D</td>
+                        <td>$995</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>1—2</td>
+                        <td>N/D</td>
+                        <td>$995</td>
                     </tr>
                     </tbody>
                 </table>
