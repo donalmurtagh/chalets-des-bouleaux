@@ -12,17 +12,6 @@
 	  $("html, body").animate({ scrollTop: 0 }, 600);
 	  return false;
 	});
-// Datepicker
-	$('#datepicker-start').Zebra_DatePicker({
-	  direction: true,
-	  format: 'M d, Y',
-	  pair: $('#datepicker-end')
-	});
-
-	$('#datepicker-end').Zebra_DatePicker({
-	  direction: 1,
-	  format: 'M d, Y'
-	});
 
 // Fit Text
 	$(".fittext").fitText(1.1, { minFontSize: 32, maxFontSize: '37px' });
