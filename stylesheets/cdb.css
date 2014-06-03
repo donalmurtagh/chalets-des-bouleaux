@@ -9,7 +9,7 @@
 
 #logo a {
     font-variant: small-caps;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 40px;
     color: #D6BA00;
     font-weight: bold;
@@ -113,7 +113,7 @@ address {
     margin-bottom: 10px;
     border-radius: 5px;
     color: white;
-    text-align: center;
+    text-align: center !important;
 }
 
 .active-page {
@@ -124,6 +124,24 @@ address {
 hr.divider {
     margin-top: 20px;
     margin-bottom: 20px
+}
+
+#logo {
+    text-align: center;
+}
+
+#innerHeader {
+    font-size: 14px;
+}
+
+#fpq, #innerHeader {
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    #fpq {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 479px) {

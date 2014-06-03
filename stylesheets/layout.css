@@ -63,7 +63,6 @@
 }
 #branding {
 	color: #9FADB6;
-	height: 115px;
 	line-height: 21px;
 }
 #logo {
@@ -1000,7 +999,6 @@ hr.hidden {
 .navigationBar nav select {
 	display: none;
 	border: 1px solid #3da0bf;
-	background: #f7f7f7 url(../images/selectbox.png) right top no-repeat;
 	height: 35px;
 	width: 100%;
 	padding:7px;
@@ -1175,7 +1173,6 @@ table.zebra caption {
 	padding: 12px 0 0;
 }
 #pricing_table .best_deal {
-	background: url("../images/best_deal.png") no-repeat scroll 0 0 transparent;
 	display: inline;
 	float: right;
 	height: 80px;
