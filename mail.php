@@ -11,7 +11,7 @@ if ($_POST) {
         "X-Mailer: PHP/" . phpversion();
 
     //send email   
-    mail("maud_27@hotmail.com", $subject, $message, $headers);
+    mail("chaletsdesbouleaux@tlb.sympatico.ca", $subject, $message, $headers);
 }
 
 ?>
