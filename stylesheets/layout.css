@@ -705,7 +705,7 @@ ul#footerlinks li a {
 	font-weight: bold;
 	display: block;
 }
-ul#footerlinks li a:hover {
+ul#footerlinks li a:hover, ul#footerlinks li a.active  {
 	color: #d6ba28;
 }
 /* Languages */
