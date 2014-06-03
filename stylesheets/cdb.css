@@ -121,6 +121,11 @@ address {
     color: #3da0bf !important;
 }
 
+hr.divider {
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
 @media only screen and (max-width: 479px) {
     #logo a {
         font-size: 26px;
