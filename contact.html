@@ -245,12 +245,16 @@
 <script type="text/javascript">
     $(function () {
 
-        var cdbAddress = "Notre-Dame-de-Pontmain, QC J0W Canada";
+        var cdbAddress = "Chalet Des Bouleaux, Notre-Dame-de-Pontmain, QC";
         var fadeTime = 400;
 
         $('#map').gmap3({
             marker: {
-                address: cdbAddress
+                lat: 46.283363,
+                lng: -75.638174
+
+                // the position of the marker is more accurate when we use lat/lng instead of the address
+                // address: cdbAddress
             },
             map: {
                 options: {
