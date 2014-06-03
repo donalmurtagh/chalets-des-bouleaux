@@ -66,6 +66,11 @@ ul.line > li:hover {
     padding-left: 0;
 }
 
+.list h5 {
+    font-weight: bold;
+    color: #3DA0BF;
+}
+
 .spacer {
     text-transform: uppercase;
     margin-top: 20px;
