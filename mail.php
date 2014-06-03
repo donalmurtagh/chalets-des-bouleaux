@@ -3,7 +3,7 @@ if ($_POST) {
     $name  = $_POST['name'];
     $email = $_POST['email'];
     $message  = $_POST['text'];
-    $subject = "chaletsdesbouleax.com message de: $name";
+    $subject = "chaletsdesbouleaux.com message de: $name";
 
     $headers = "" .
         "Reply-To:" . $email . "\r\n" .
