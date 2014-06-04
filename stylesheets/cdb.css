@@ -132,6 +132,11 @@ hr.divider {
     margin-bottom: 20px
 }
 
+.emphasis {
+    background-color: #F4F4F4;
+    padding: 5px;
+}
+
 #logo {
     text-align: center;
 }
