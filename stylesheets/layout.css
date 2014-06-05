@@ -745,7 +745,6 @@ ul.lang li a:hover {
 }
 /* Breadcrumbs */
 .breadcrumb {
-	height: 50px;
 	position: relative;
 	text-align: right;
 }
@@ -758,7 +757,7 @@ ul.lang li a:hover {
 	display: block;
 	float: left;
 	margin-bottom: 0;
-	padding-right: 22px;
+	padding-right: 25px;
 	position: relative;
 	z-index: 3;
 }
@@ -771,8 +770,8 @@ ul.lang li a:hover {
 .breadcrumb a {
 	color: #363f48;
 	font-weight: normal;
-	line-height: 50px;
-	padding: 0 15px 0 0;
+	line-height: 30px;
+	padding-right: 10px;
 }
 .breadcrumb a:hover {
 	color: #3DA0BF;
