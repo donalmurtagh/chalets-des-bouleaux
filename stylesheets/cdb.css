@@ -137,6 +137,13 @@ hr.divider {
     padding: 5px;
 }
 
+
+.gallery li {
+    margin-bottom: 20px;
+}
+
+
+
 ul.albums {
     margin-bottom: 5px;
     margin-top: 5px;
