@@ -122,10 +122,7 @@ address {
     text-align: center !important;
 }
 
-.active-page {
-    font-weight: bold !important;
-    color: #3da0bf !important;
-}
+
 
 hr.divider {
     margin-top: 20px;
@@ -142,7 +139,15 @@ hr.divider {
     margin-bottom: 20px;
 }
 
+.tagCloud {
+    padding-top: 5px;
+}
 
+.tagCloud a.active-page, .tagCloud a:hover {
+    background-color: #3DA0BF;
+    color: white;
+    font-weight: bold;
+}
 
 ul.albums {
     margin-bottom: 5px;
