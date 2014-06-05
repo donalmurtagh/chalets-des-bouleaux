@@ -139,8 +139,13 @@ hr.divider {
     margin-bottom: 20px;
 }
 
+.breadcrumb .container {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
 .tagCloud {
-    padding-top: 5px;
+    margin: 0 10px;
 }
 
 .tagCloud a.active-page, .tagCloud a:hover {
