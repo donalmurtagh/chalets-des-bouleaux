@@ -151,7 +151,6 @@ hr.divider {
 .tagCloud a.active-page, .tagCloud a:hover {
     background-color: #3DA0BF;
     color: white;
-    font-weight: bold;
 }
 
 ul.albums {
