@@ -178,6 +178,11 @@ ul.albums {
     display: none;
 }
 
+.social-link img {
+    position: relative;
+    top: 5px;
+}
+
 @media only screen and (max-width: 767px) {
     #fpq {
         display: none;
