@@ -170,9 +170,21 @@ ul.albums {
     padding-top: 20px;
 }
 
+.social-link {
+    width: 50px;
+}
+
+.social-link .menu-label {
+    display: none;
+}
+
 @media only screen and (max-width: 767px) {
     #fpq {
         display: none;
+    }
+
+    .social-link .menu-label {
+        display: inline;
     }
 }
 
