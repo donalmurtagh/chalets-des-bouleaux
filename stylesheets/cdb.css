@@ -181,6 +181,7 @@ ul.albums {
 .social-link img {
     position: relative;
     top: 5px;
+    width: 1.3em;
 }
 
 @media only screen and (max-width: 767px) {
