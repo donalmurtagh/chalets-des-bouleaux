@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="stylesheets/mosaic.css">
     <link rel="stylesheet" href="stylesheets/prettyPhoto.css">
     <link rel="stylesheet" href="stylesheets/cdb.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
 
     <style type="text/css">
         ul.line {
@@ -242,39 +243,30 @@
 </div>
 
 <script src="javascripts/jquery-1.8.3.min.js"></script>
-<script src="http://maps.google.ca/maps/api/js?language=fr"></script>
-<script src="javascripts/gmap3.min.js"></script>
+<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
 <script>
     $(function () {
 
+        var mapCentre = {
+            lat: 46.283363,
+            lon: -75.638174
+        };
+
+        new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat([mapCentre.lon, mapCentre.lat]),
+                zoom: 7
+            })
+        });
+
         var cdbAddress = "Chalet Des Bouleaux, Notre-Dame-de-Pontmain, QC";
         var fadeTime = 400;
-
-        $('#map').gmap3({
-            marker: {
-                lat: 46.283363,
-                lng: -75.638174
-
-                // the position of the marker is more accurate when we use lat/lng instead of the address
-                // address: cdbAddress
-            },
-            map: {
-                options: {
-                    zoom: 7,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    mapTypeControl: true,
-                    mapTypeControlOptions: {
-                        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-                    },
-                    scrollwheel: false,
-                    scaleControl: true,
-                    zoomControl: true,
-                    zoomControlOptions: {
-                        style: google.maps.ZoomControlStyle.LARGE
-                    }
-                }
-            }
-        });
 
         // handler for the directions form
         var endAddress = encodeURIComponent(cdbAddress);
