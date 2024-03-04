@@ -23,7 +23,7 @@
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin=""/>
 
-    <style type="text/css">
+    <style>
         ul.line {
             margin-bottom: 20px;
         }
@@ -292,7 +292,9 @@
 
         // handler for contact form
         $(function (e) {
-            $("#contactForm").submit(function (e) {
+            var contactForm = $("#contactForm");
+
+            contactForm.submit(function (e) {
                 var valid = true;
 
                 function validate(fieldValue, errorMsg) {
@@ -319,15 +321,16 @@
                     valid = false;
                 }
 
-                var dataString = 'name=' + name + '&email=' + email + '&text=' + text;
-
                 if (valid) {
                     $.ajax({
                         type: "POST",
                         url: "mail.php",
-                        data: dataString,
+                        data: `name=${name}&email=${email}&text=${text}`,
                         success: function () {
                             $('#msg-sent').fadeIn(fadeTime);
+                            contactForm.each(function () {
+                                this.reset();
+                            });
                         }
                     });
                     return false;
