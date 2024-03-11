@@ -137,27 +137,24 @@
                     <div id="map" class="gmap"></div>
                 </div>
 
-                <!-- TODO remove the hide element when the email is confirmed -->
-                <div class="hide">
-                    <div id="msg-sent" class="info hide">Merci, votre message a été envoyé</div>
-                    <p>Pour nous contacter, veuillez compléter les informations ci-dessous.</p>
+                <div id="msg-sent" class="info hide">Merci, votre message a été envoyé</div>
+                <p>Pour nous contacter, veuillez compléter les informations ci-dessous.</p>
 
-                    <form id="contactForm" class="remove-bottom" method="POST">
-                        <label for="form-name">Votre Nom</label>
-                        <input type="text" name="name" id="form-name" required>
+                <form id="contactForm" class="remove-bottom" method="POST">
+                    <label for="form-name">Votre Nom</label>
+                    <input type="text" name="name" id="form-name" required>
 
-                        <label for="form-email">Votre Courriel</label>
-                        <input type="email" name="email" id="form-email" required>
+                    <label for="form-email">Votre Courriel</label>
+                    <input type="email" name="email" id="form-email" required>
 
-                        <label for="form-msg">Votre Message</label>
-                        <textarea rows="8" name="message" id="form-msg" cols="1" required></textarea>
+                    <label for="form-msg">Votre Message</label>
+                    <textarea rows="8" name="message" id="form-msg" cols="1" required></textarea>
 
-                        <div class="loading hide" id="spinner" style="background-position: left"></div>
-                        <div id="submit-contact">
-                            <input type="submit" value="Envoyer" class="remove-bottom"/>
-                        </div>
-                    </form>
-                </div>
+                    <div class="loading hide" id="spinner" style="background-position: left"></div>
+                    <div id="submit-contact">
+                        <input type="submit" value="Envoyer" class="remove-bottom"/>
+                    </div>
+                </form>
             </section>
 
             <aside id="sidebar" class="five columns">
@@ -292,7 +289,7 @@
              */
             $.ajax({
                 type: 'POST',
-                url: 'https://formsubmit.co/ajax/chaletsdesbouleaux@gmail.com', // TODO replace this with the hash
+                url: 'https://formsubmit.co/ajax/5f5c2cb539423d839ffcf34eb76ced39',
                 dataType: 'json',
                 accepts: 'application/json',
                 data: formData,
