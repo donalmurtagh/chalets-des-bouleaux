@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
-    <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <title>Chalets des Bouleaux</title>
     <meta name="author" content="Dónal Murtagh">
@@ -66,13 +64,8 @@
 </head>
 <body>
 
-<!-- Primary Page Layout -->
-<!-- Header -->
 <header>
-    <!-- topBar -->
     <div class="wrapper">
-
-        <!-- branding -->
         <section id="branding">
             <div class="container">
 
@@ -97,10 +90,8 @@
                     </p>
                 </div>
             </div>
-
         </section>
-        <!-- end branding -->
-        <!-- navigation -->
+
         <div id="navigation">
             <div class="navigationBar">
                 <nav id="nav">
@@ -127,19 +118,14 @@
                 </nav>
             </div>
         </div>
-        <!-- end navigation -->
     </div>
 </header>
 
-<!-- end Header -->
 <div class="wrapper">
-    <!-- Header Image -->
     <div id="headerImage" class="remove-lineheight white">
         <div class="loading"><img src="images/cdb/map.jpg"/></div>
     </div>
-    <!-- end Header Image -->
 </div>
-<!-- Main -->
 <div class="wrapper">
     <div id="main" class="white">
         <div class="container">
@@ -147,21 +133,41 @@
                 <h2 class="uppercase fittext">Contacts</h2>
             </div>
             <section class="eleven columns">
-                <h5 class="spacer fancy">Réservations et Renseignements</h5>
-                <p style="margin-bottom: 10px">Pour réserver ou obtenir de plus amples renseignements contactez-nous:</p>
-
-                <ul class="line">
-                    <li><a href="mailto:chaletsdesbouleaux@gmail.com">chaletsdesbouleaux@gmail.com</a></li>
-                    <li>Téléphone: <span class="phone">819-597-2957</span></li>
-                </ul>
-
-                <h5 class="fancy spacer">Emplacement</h5>
                 <div class="mapContainer box">
                     <div id="map" class="gmap"></div>
+                </div>
+
+                <!-- TODO remove the hide element when the email is confirmed -->
+                <div class="hide">
+                    <div id="msg-sent" class="info hide">Merci, votre message a été envoyé</div>
+                    <p>Pour nous contacter, veuillez compléter les informations ci-dessous.</p>
+
+                    <form id="contactForm" class="remove-bottom" method="POST">
+                        <label for="form-name">Votre Nom</label>
+                        <input type="text" name="name" id="form-name" required>
+
+                        <label for="form-email">Votre Courriel</label>
+                        <input type="email" name="email" id="form-email" required>
+
+                        <label for="form-msg">Votre Message</label>
+                        <textarea rows="8" name="message" id="form-msg" cols="1" required></textarea>
+
+                        <div class="loading hide" id="spinner" style="background-position: left"></div>
+                        <div id="submit-contact">
+                            <input type="submit" value="Envoyer" class="remove-bottom"/>
+                        </div>
+                    </form>
                 </div>
             </section>
 
             <aside id="sidebar" class="five columns">
+                <h5 class="fancy">Réservations et Renseignements</h5>
+                <p>Pour réserver ou obtenir de plus amples renseignements contactez-nous:</p>
+
+                <ul class="line">
+                    <li>Téléphone: <span class="phone">819-597-2957</span></li>
+                    <li><a href="mailto:chaletsdesbouleaux@gmail.com">chaletsdesbouleaux@gmail.com</a></li>
+                </ul>
 
                 <h5 class="fancy">Propriétaires</h5>
                 <p>Luc Bondu et Sylvie Gougeon.</p>
@@ -194,10 +200,7 @@
             </aside>
         </div>
     </div>
-    <!-- end Main -->
-    <!-- Bottom -->
     <div class="wrapper">
-        <!-- Footer -->
         <footer>
             <div id="footer" class="darkGray">
                 <div class="container">
@@ -246,21 +249,62 @@
             .addTo(leafletMap)
             .bindPopup("Chalets des Bouleaux").openPopup();
 
+        const fadeTime = 400;
+
         // handler for the directions form
-        $('#directions').submit(function() {
+        $('#directions').submit(function () {
             let startAddress = $('#depart').val()?.trim()
-            const fadeTime = 400;
 
             if (startAddress) {
                 $('#address-error').fadeOut(fadeTime);
                 startAddress = encodeURIComponent(startAddress);
                 const endAddress = encodeURIComponent("Chalets des Bouleaux, Notre-Dame de Pontmain, QC");
-
                 const googleMapsUrl = `https://maps.google.ca/maps?saddr=${startAddress}&daddr=${endAddress}&hl=fr`;
                 window.open(googleMapsUrl);
             } else {
                 $('#address-error').fadeIn(fadeTime);
             }
+            return false;
+        });
+
+        // handler for contact form
+        const contactForm = $("#contactForm");
+        const toggleSpinner = () => $("#spinner, #submit-contact").toggleClass('hide');
+
+        contactForm.submit(function (e) {
+            toggleSpinner()
+            const name = $("#form-name").val();
+            const message = $("#form-msg").val();
+            const email = $("#form-email").val();
+
+            const formData = {
+                name,
+                message,
+                email,
+                _subject: `chaletsdesbouleaux.com message de: ${name}`
+            }
+
+            /*
+            Use https://formsubmit.co/ to send an email when the form is submitted
+
+            https://formsubmit.co/documentation
+            https://formsubmit.co/ajax-documentation
+             */
+            $.ajax({
+                type: 'POST',
+                url: 'https://formsubmit.co/ajax/chaletsdesbouleaux@gmail.com', // TODO replace this with the hash
+                dataType: 'json',
+                accepts: 'application/json',
+                data: formData,
+                success: data => {
+                    toggleSpinner()
+                    $('#msg-sent').fadeIn(fadeTime);
+                    contactForm.each(function () {
+                        this.reset();
+                    });
+                },
+                error: error => toggleSpinner()
+            });
             return false;
         });
     });
