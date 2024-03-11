@@ -283,9 +283,16 @@
 
             /*
             Use https://formsubmit.co/ to send an email when the form is submitted
+            - https://formsubmit.co/documentation
+            - https://formsubmit.co/ajax-documentation
 
-            https://formsubmit.co/documentation
-            https://formsubmit.co/ajax-documentation
+            When testing this form locally, replace the URL below with something like
+            https://formsubmit.co/ajax/cdb-test@example.com
+            to avoid sending emails to the actual CDB mailbox during testing.
+
+            If the test email address has not previously been verified by FormSubmit, an email containing an activation
+            link will be sent it the first time the form is submitted. Emails will not be delivered (by FormSubmit)
+            until the address is activated.
              */
             $.ajax({
                 type: 'POST',
@@ -300,7 +307,7 @@
                         this.reset();
                     });
                 },
-                error: error => toggleSpinner()
+                error: toggleSpinner
             });
             return false;
         });
